@@ -13,29 +13,28 @@ app.use(bodyParser.urlencoded({ extended: false }))
 app.use(bodyParser.json())
 
 app.get('/', (req, res) => {
-    res.sendFile(__dirname + '/public/index.hmtl')
+    res.sendFile(__dirname + '/src/public/index.hmtl')
+})
+
+app.get('/form', (req, res) => {
+  res.sendFile(__dirname + '/src/public/formulario.html')
 })
 
 app.post('/dados', (req, res) => {
     let nome = req.body.nome
     let sobrenome = req.body.sobrenome
     let email = req.body.email
-    
-    
+  
     res.json({
         "nome": nome,
         "sobrenome": sobrenome,
         "email": email
     })
-    
      let retorno = teste(nome, sobrenome, email, req.body)
-
      res.json(retorno);
 })
 
 function teste(nome, sobrenome, email, json) {
-
-    //console.log('Json form: ' + json)
     var options = {
       'method': 'POST',
       'url': 'http://138.68.29.250:8082/',
@@ -56,7 +55,6 @@ function teste(nome, sobrenome, email, json) {
         console.log("Dados: " + JSON.stringify(envioDadoDB))
 
     });
-    
 
     fs.writeFile('usuario.txt', `
         Nome: ${nome}; 
