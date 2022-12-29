@@ -1,0 +1,113 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    width: 100vw;
+    height: 100vh;
+    background-color: #222;
+    color: #fff;
+}
+
+h1 {
+    font-size: 10rem;
+}
+
+.botao-link {
+    border: solid;
+    border-radius: 20px;
+    margin: 5rem 0;
+    padding: 10px;
+    color: #fff;
+    font-size: 2.5rem;
+    text-decoration: none;
+}
+
+.container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.formulario {
+    width: 40%;
+    height: 70%;
+    border: 4px double;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+label {
+    font-size: 2rem;
+    font-weight: bold;
+    text-transform: capitalize;
+}
+
+label::after {
+    content: ':';
+}
+
+input {
+    border: solid transparent;
+    border-radius: 10px;
+    margin: 20px 0;
+    padding: 10px 20px;
+    font-size: 1.75rem;
+}
+
+input:hover {
+    border: solid blue;
+}
+
+input:focus {
+    box-shadow: 0px 0px 20px blue;
+}
+
+button {
+    border-radius: 10px;
+    padding: 10px;
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+/* MOBILE */
+@media screen and (max-width: 750px) {
+    .formulario {
+        width: 100%;
+        height: 100%;
+        border: 4px double;
+        border-radius: 20px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    input {
+        width: 90%;
+    }
+}
+
+@media screen and (max-width: 1450px) {
+    .formulario {
+        border: 4px double;
+        border-radius: 20px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    input {
+        width: 90%;
+    }
+}
